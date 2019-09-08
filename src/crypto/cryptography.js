@@ -1,23 +1,33 @@
-export function getRsaKeys(masterPassword) {
+import NodeRSA from 'node-rsa';
 
+export function getRsaKeys(masterPassword) {
   const hipsData = JSON.parse(window.localStorage.hips);
 
   return deriveKey(masterPassword, hipsData.salt)
-  .then(key => {
-    let iv = Uint8Array.from(atob(hipsData.iv), c => c.charCodeAt(0));
-    let encoded = Uint8Array.from(atob(hipsData.keys), c => c.charCodeAt(0));
-    return window.crypto.subtle.decrypt({
-      name: 'AES-CBC',
-      iv: iv
-    }, key, encoded)
-  })
-  .then(buffer => {
-    const decodedString = new TextDecoder().decode(buffer);
-    const keys = JSON.parse(decodedString);
-    validateKeys(keys);
-    return keys;
-  });
+    .then(key => {
+      let iv = Uint8Array.from(atob(hipsData.iv), c => c.charCodeAt(0));
+      let encoded = Uint8Array.from(atob(hipsData.keys), c => c.charCodeAt(0));
+      return window.crypto.subtle.decrypt({
+        name: 'AES-CBC',
+        iv: iv
+      }, key, encoded)
+    })
+    .then(buffer => {
+      const decodedString = new TextDecoder().decode(buffer);
+      const keys = JSON.parse(decodedString);
+      validateKeys(keys);
+      return keys;
+    });
 }
+
+export function rsaDecrypt(privateKey, data) {
+  const key = new NodeRSA();
+  key.importKey(privateKey);
+
+  const result = new TextDecoder().decode(key.decrypt(data));
+  return JSON.parse(result);
+}
+  
 
 function deriveKey(passString, saltString) {
   let pass = Uint8Array.from(passString, c => c.charCodeAt(0));

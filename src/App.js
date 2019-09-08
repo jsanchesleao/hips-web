@@ -3,6 +3,7 @@ import './App.css';
 import 'bulma';
 import KeyImporter from './components/keyImporter';
 import RequestMasterKeyComponent from './components/requestMasterKeyComponent';
+import ConfigureCredentialsComponent from './components/configureCredentials';
 import HomeComponent from './components/homeComponent';
 
 function hasImportedData() {
@@ -14,7 +15,8 @@ class App extends React.Component {
     super();
     this.state = {
       hasImportedData: hasImportedData(),
-      masterKey: null
+      masterKey: 'omg',
+      credentials: loadCredentials()
     }
   }
 
@@ -24,6 +26,10 @@ class App extends React.Component {
 
   masterKeyCallback = (key) => {
     this.setState({masterKey: key});
+  }
+
+  credentialsCallback = () => {
+    this.setState({credentials: loadCredentials()});
   }
 
   render() {
@@ -41,9 +47,21 @@ class App extends React.Component {
     else if (!this.state.masterKey) {
       return <RequestMasterKeyComponent onFinish={this.masterKeyCallback} />
     }
-    else {
-      return <HomeComponent masterKey={this.state.masterKey}/>
+    else if (!this.state.credentials) {
+      return <ConfigureCredentialsComponent masterKey={this.state.masterKey} onFinish={this.credentialsCallback} />
     }
+    else {
+      return <HomeComponent masterKey={this.state.masterKey} credentials={this.state.credentials}/>
+    }
+  }
+}
+
+function loadCredentials() {
+  try{
+    return JSON.parse(window.localStorage.credentials)
+  }
+  catch(err) {
+    return null;
   }
 }
 
