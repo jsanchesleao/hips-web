@@ -9,11 +9,13 @@ class KeyImporter extends React.Component {
     };
   }
   
-  importKeys = async () => {
-    const result = await fetch(`http://${this.state.address}:8000/keys`);
-    const json = await result.json();
-    window.localStorage.hips = JSON.stringify(json);
-    this.props.onImport();
+  importKeys = () => {
+    fetch(`http://${this.state.address}:8000/keys`)
+      .then(result => result.json())
+      .then(json => {
+        window.localStorage.hips = JSON.stringify(json);
+        this.props.onImport();
+      })
   }
 
   changeAddress = (e) => {
