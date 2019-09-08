@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.code {
+  background-color: lightgray;
+  font-family: monospace;
+}
+
+.importer {
+  justify-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 50vh;
+
+  padding: 1em;
+}
+
+.importer-input {
+  margin: 1em 0;
+}
+
+.masterkey {
+  display: flex;
+  height: 80vh;
+  width: 80vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.masterkey-button {
+  margin: 1em 0;
+}
