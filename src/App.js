@@ -15,7 +15,7 @@ class App extends React.Component {
     super();
     this.state = {
       hasImportedData: hasImportedData(),
-      masterKey: 'omg',
+      masterKey: '',
       credentials: loadCredentials()
     }
   }

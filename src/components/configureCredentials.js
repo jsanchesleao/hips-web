@@ -6,7 +6,7 @@ class ConfigureCredentialsComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      githubUsername: 'jsanchesleao'
+      githubUsername: ''
     }
   }
 

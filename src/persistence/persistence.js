@@ -9,12 +9,12 @@ export function getData(masterKey, username) {
 }
 
 function getRawData(username) {
-    return getGistId(username).then()
+    return getGistId(username)
     .then(id => fetch(`https://api.github.com/gists/${id}`))
     .then(result => result.json())
     .then(gist => {
       return gist.files['hips_passwords'].content;
-    })
+    });
 }
 
 function getGistId(username) {

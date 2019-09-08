@@ -2,7 +2,6 @@ import NodeRSA from 'node-rsa';
 
 export function getRsaKeys(masterPassword) {
   const hipsData = JSON.parse(window.localStorage.hips);
-
   return deriveKey(masterPassword, hipsData.salt)
     .then(key => {
       let iv = Uint8Array.from(atob(hipsData.iv), c => c.charCodeAt(0));

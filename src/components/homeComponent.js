@@ -8,7 +8,7 @@ class HomeComponent extends React.Component {
     super();
     this.state = {
       passwords: [],
-      selected: ']`(qL5-,jfEp*ddM'
+      selected: ''
     };
   }
 
@@ -41,7 +41,7 @@ class HomeComponent extends React.Component {
           <h1 className="title is-3 home-title">Stored Passwords</h1>
           <div className="home-passwords">
             {this.state.passwords.map(p => (
-                <Clipboard className="button home-button is-primary" data-clipboard-text={p.password} onSuccess={this.onSelect(p)}>
+                <Clipboard key={p.key} className="button home-button is-primary" data-clipboard-text={p.password} onSuccess={this.onSelect(p)}>
                   {p.name}
                 </Clipboard>
             ))}
