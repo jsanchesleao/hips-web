@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "869a7dc887a4055f16df8c0291db8797",
+    "revision": "9cc36714b44ca68a78c6cde64aae25c6",
     "url": "/hips-web/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hips-web/static/css/2.cf291e2b.chunk.css"
   },
   {
-    "revision": "1dc243e6bcb20e654461",
+    "revision": "d4d502c7baa71c0510e4",
     "url": "/hips-web/static/css/main.f41457d1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hips-web/static/js/2.db6fb4a3.chunk.js"
   },
   {
-    "revision": "1dc243e6bcb20e654461",
-    "url": "/hips-web/static/js/main.7e08799c.chunk.js"
+    "revision": "d4d502c7baa71c0510e4",
+    "url": "/hips-web/static/js/main.b9a3db09.chunk.js"
   },
   {
     "revision": "43a86cad8ebb789bc013",
