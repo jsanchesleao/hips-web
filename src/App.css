@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -42,4 +46,33 @@
 
 .masterkey-button {
   margin: 1em 0;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: 2em 0;
+  height: 70vh;
+  overflow: auto;
+}
+
+.home-title {
+  text-align: center;
+}
+
+.home-passwords {
+  display: flex;
+  width: 18em;
+}
+
+.home-button {
+  margin: .5em;
+  min-width: 8em;
+}
+
+.reset-wrapper {
+  width: 80vw;
 }
