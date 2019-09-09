@@ -1,40 +1,33 @@
 import React from 'react';
+import {getGistById} from '../persistence/persistence';
 
 class KeyImporter extends React.Component {
 
   constructor() {
     super();
+    const urlParams = new URLSearchParams(window.location.search);
     this.state = {
-      address: 'localhost'
-    };
-  }
-  
-  importKeys = () => {
-    fetch(`http://${this.state.address}:8000/keys`)
-      .then(result => result.json())
-      .then(json => {
-        window.localStorage.hips = JSON.stringify(json);
-        this.props.onImport();
-      })
+      gistId: urlParams.get('gistId')
+    }
   }
 
-  changeAddress = (e) => {
-    this.setState({address: e.target.value});
+  componentDidMount() {
+    getGistById(this.state.gistId)
+    .then(gist => {
+      window.localStorage.username = gist.owner.login
+      window.localStorage.hips = gist.files['hips_data'].content;
+      window.location.reload();
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
   render() {
     return (
       <div className="importer">
-        <p>To import the keys, run <span className="code">hips export-key</span> on the console in your computer, and enter here the IP address or the DNS name of the computer.</p>
-        <input
-            id="address-input"
-            className="input is-primary importer-input"
-            placeholder="Address"
-            value={this.state.address}
-            onChange={this.changeAddress} />
-          <button 
-            className="button is-primary importer-button" 
-            onClick={this.importKeys}>Import</button>
+        <h1 className="title is-3">We are importing your data</h1>
+        <p>Please wait</p>
       </div>
     )
   }

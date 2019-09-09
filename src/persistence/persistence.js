@@ -8,10 +8,13 @@ export function getData(masterKey, username) {
   }).then(rawData => rsaDecrypt(privateKey, rawData));
 }
 
+export function getGistById(gistId) {
+  return fetch(`https://api.github.com/gists/${gistId}`).then(result => result.json());
+}
+
 function getRawData(username) {
     return getGistId(username)
-    .then(id => fetch(`https://api.github.com/gists/${id}`))
-    .then(result => result.json())
+    .then(getGistById)
     .then(gist => {
       return gist.files['hips_passwords'].content;
     });

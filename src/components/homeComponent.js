@@ -13,7 +13,8 @@ class HomeComponent extends React.Component {
   }
 
   componentDidMount() {
-    getData(this.props.masterKey, this.props.credentials.githubUsername).then(data => {
+    const username = window.localStorage.username;
+    getData(this.props.masterKey, username).then(data => {
       this.setState({passwords: data.passwords})
     });
   }
