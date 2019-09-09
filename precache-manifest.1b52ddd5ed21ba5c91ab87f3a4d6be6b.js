@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "64d7e7e09e1241c043eaf75d615dee61",
+    "revision": "3aea2bfbe040201a3e6cca51a1d005a6",
     "url": "/hips-web/index.html"
   },
   {
-    "revision": "bd2615408b0d0949c751",
+    "revision": "e1c1814a120ac77c9fef",
     "url": "/hips-web/static/css/2.cf291e2b.chunk.css"
   },
   {
-    "revision": "27ce0a47f356b1a1f18f",
+    "revision": "dddb2db63133d26eddbf",
     "url": "/hips-web/static/css/main.f41457d1.chunk.css"
   },
   {
-    "revision": "bd2615408b0d0949c751",
-    "url": "/hips-web/static/js/2.a8e77c70.chunk.js"
+    "revision": "e1c1814a120ac77c9fef",
+    "url": "/hips-web/static/js/2.02992ce8.chunk.js"
   },
   {
-    "revision": "27ce0a47f356b1a1f18f",
-    "url": "/hips-web/static/js/main.90999428.chunk.js"
+    "revision": "dddb2db63133d26eddbf",
+    "url": "/hips-web/static/js/main.bdaedcc6.chunk.js"
   },
   {
     "revision": "43a86cad8ebb789bc013",
