@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hips-web/static/css/main.f41457d1.chunk.css",
+    "main.css": "/hips-web/static/css/main.c70b24ec.chunk.css",
     "main.js": "/hips-web/static/js/main.bdaedcc6.chunk.js",
     "main.js.map": "/hips-web/static/js/main.bdaedcc6.chunk.js.map",
     "runtime~main.js": "/hips-web/static/js/runtime~main.5dd32d5f.js",
@@ -9,9 +9,9 @@
     "static/js/2.02992ce8.chunk.js": "/hips-web/static/js/2.02992ce8.chunk.js",
     "static/js/2.02992ce8.chunk.js.map": "/hips-web/static/js/2.02992ce8.chunk.js.map",
     "index.html": "/hips-web/index.html",
-    "precache-manifest.1b52ddd5ed21ba5c91ab87f3a4d6be6b.js": "/hips-web/precache-manifest.1b52ddd5ed21ba5c91ab87f3a4d6be6b.js",
+    "precache-manifest.c7ab1d2bfd88fac29c226bbff660cfcd.js": "/hips-web/precache-manifest.c7ab1d2bfd88fac29c226bbff660cfcd.js",
     "service-worker.js": "/hips-web/service-worker.js",
     "static/css/2.cf291e2b.chunk.css.map": "/hips-web/static/css/2.cf291e2b.chunk.css.map",
-    "static/css/main.f41457d1.chunk.css.map": "/hips-web/static/css/main.f41457d1.chunk.css.map"
+    "static/css/main.c70b24ec.chunk.css.map": "/hips-web/static/css/main.c70b24ec.chunk.css.map"
   }
 }
