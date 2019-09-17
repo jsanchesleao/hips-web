@@ -7,7 +7,8 @@ class KeyImporter extends React.Component {
     super();
     const urlParams = new URLSearchParams(window.location.search);
     this.state = {
-      gistId: urlParams.get('gistId')
+      gistId: urlParams.get('gistId'),
+      error: null
     }
   }
 
@@ -20,6 +21,7 @@ class KeyImporter extends React.Component {
     })
     .catch(err => {
       console.log(err);
+      this.setState({error: err.stack})
     });
   }
 
@@ -28,6 +30,9 @@ class KeyImporter extends React.Component {
       <div className="importer">
         <h1 className="title is-3">We are importing your data</h1>
         <p>Please wait</p>
+        {this.state.error && (
+          <pre>{this.state.error}</pre>
+        )}
       </div>
     )
   }
