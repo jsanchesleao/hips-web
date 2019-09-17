@@ -22,6 +22,10 @@ class App extends React.Component {
     this.setState({masterKey: key});
   }
 
+  lock = () => {
+    this.setState({masterKey: ''});
+  }
+
   importCallback = () => {
     this.setState({hasImportedData: true});
   }
@@ -42,7 +46,7 @@ class App extends React.Component {
       return <RequestMasterKeyComponent onFinish={this.masterKeyCallback} />
     }
     else {
-      return <HomeComponent masterKey={this.state.masterKey} />
+      return <HomeComponent masterKey={this.state.masterKey} onLock={this.lock} />
     }
   }
 }

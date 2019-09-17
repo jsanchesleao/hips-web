@@ -27,11 +27,8 @@ class HomeComponent extends React.Component {
     alert(`password ${p.name} copied to the clipboard`);
   }
 
-  reset = () => {
-    delete window.localStorage.hips;
-    delete window.localStorage.gistId;
-    delete window.localStorage.credentials;
-    window.location.reload();
+  lock = () => {
+    this.props.onLock();
   }
 
 
@@ -49,7 +46,7 @@ class HomeComponent extends React.Component {
           </div>
         </div>
         <div className="reset-wrapper">
-          <button className="button home-reset is-danger is-fullwidth" onClick={this.reset}>reset</button>
+          <button className="button home-reset is-danger is-fullwidth" onClick={this.lock}>Lock</button>
         </div>
       </React.Fragment>
     );
