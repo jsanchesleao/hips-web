@@ -22,6 +22,10 @@ class App extends React.Component {
     this.setState({masterKey: key});
   }
 
+  importCallback = () => {
+    this.setState({hasImportedData: true});
+  }
+
   render() {
     return (
       <div className="app">
@@ -32,7 +36,7 @@ class App extends React.Component {
 
   renderPage() {
     if(!this.state.hasImportedData) {
-      return <KeyImporter />
+      return <KeyImporter callback={this.importCallback}/>
     }
     else if (!this.state.masterKey) {
       return <RequestMasterKeyComponent onFinish={this.masterKeyCallback} />

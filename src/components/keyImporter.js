@@ -16,7 +16,7 @@ class KeyImporter extends React.Component {
     .then(gist => {
       window.localStorage.username = gist.owner.login
       window.localStorage.hips = gist.files['hips_data'].content;
-      window.location.reload();
+      this.props.callback();
     })
     .catch(err => {
       console.log(err);
