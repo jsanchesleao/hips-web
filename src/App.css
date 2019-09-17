@@ -74,6 +74,11 @@ body {
   min-width: 8em;
 }
 
+.importer-button {
+  margin: .5em;
+  min-width: 8em;
+}
+
 .reset-wrapper {
   width: 80vw;
 }

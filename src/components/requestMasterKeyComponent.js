@@ -30,7 +30,6 @@ class RequestMasterKeyComponent extends React.Component {
         <h1 className="title is-3">Enter Master Key</h1>
         <input type="password" value={this.state.masterKey} onChange={this.handleInput} className="input is-primary" />
         <button className="button is-primary is-large masterkey-button" onClick={this.unlock}>Unlock</button>
-        <p>{this.state.test}</p>
       </div>
     );
   }
