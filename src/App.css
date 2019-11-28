@@ -63,15 +63,21 @@ body {
   text-align: center;
 }
 
-.home-passwords {
-  display: flex;
-  flex-direction: column;
-  width: 18em;
-}
-
 .home-button {
   margin: .5em;
   min-width: 8em;
+  height: 3em !important;
+  font-weight: bold;
+}
+
+.home-passwords {
+  display: flex;
+  flex-wrap: wrap;
+  width: 18em;
+}
+
+.home-reset {
+  font-weight: bold;
 }
 
 .importer-button {

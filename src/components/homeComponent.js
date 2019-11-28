@@ -2,6 +2,8 @@ import React from 'react';
 import {getData} from '../persistence/persistence';
 import Clipboard from 'react-clipboard.js';
 
+import "./home.css";
+
 class HomeComponent extends React.Component {
 
   constructor() {
